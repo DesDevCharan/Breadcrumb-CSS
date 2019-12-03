@@ -1,0 +1,89 @@
+.breadcrumb {
+	display: inline-block;
+	box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.35);
+	overflow: hidden;
+	a {
+		text-decoration: none;
+		outline: none;
+		display: block;
+		float: left;
+		font-size: 12px;
+		line-height: 72px;
+		color: white;
+		padding: 0 60px 0 60px;
+		position: relative;
+		&:first-child {
+			padding-left: 46px;
+			&:before {
+				left: 14px;
+			}
+		}
+		&:hover {
+			background: #333;
+			background: linear-gradient(#333, #000);
+			&:after {
+				background: #333;
+				background: linear-gradient(135deg, #333, #000);
+			}
+		}
+		&:after {
+			content: '';
+			position: absolute;
+			top: 0;
+			right: -36px;
+			width: 72px;
+			height: 72px;
+			transform: scale(0.707) rotate(45deg);
+			z-index: 1;
+			background: #666;
+			background: linear-gradient(135deg, #666, #333);
+			box-shadow: 3px -3px 0 3px rgb(255, 0, 0), 3px -3px 0 3px rgba(0, 0, 0, 0.1);
+			border-radius: 0 0px 0 100px;
+		}
+		&:last-child {
+			&:after {
+				content: none;
+			}
+		}
+	}
+	a.active {
+		background: #333;
+		background: linear-gradient(#333, #000);
+		&:after {
+			background: #333;
+			background: linear-gradient(135deg, #333, #000);
+		}
+	}
+}
+.flat {
+	a {
+		background: white;
+		color: black;
+		transition: all 0.5s;
+		&:after {
+			background: white;
+			color: black;
+			transition: all 0.5s;
+		}
+		&:before {
+			background: white;
+			box-shadow: 0 0 0 1px #ccc;
+		}
+		&:hover {
+			background: red;
+			color: white;
+			&:after {
+				background: red;
+				color: white;
+			}
+		}
+	}
+	a.active {
+		background: red;
+		color: white;
+		&:after {
+			background: red;
+			color: white;
+		}
+	}
+}
